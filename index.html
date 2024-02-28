@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>W Digital GR 1 - Page 1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body class="bg-black">
+    <div class="hero bg-black flex-column text-center items-center justify-center mt-6 text-white">
+        <div class="photo flex items-center justify-center">
+        <img src="img/iphonee.jpg" alt="">
+        </div>
+        <div class="heading font18_24 mt-6 pr-6 pl-6 font-semibold">
+       <p>Па§те каі бієкбікпотє éva<br>iphone 15 Pro<br><br>KáTE AIK OTO KOUTTi EYNEXEIA yIa va ÉXETE<br>Tnv eukaIpia ка кербісете!</p>
+        </div>
+    </div>
+    <div
+    class="inputn h14 flex justify-center items-center text-center mt-8 px-2.5"
+  >
+    <div
+      class="phoneicon rounded-l-xl flex justify-center items-center text-center h-12 w-12 border border-[#8F00FF]"
+    >
+      <img class="h-[50%]" src="img/purplephone.svg" alt="" />
+    </div>
+    <input
+      class="inputph border border-[#8F00FF] border-l-0 rounded-r-xl pl-3 h-12 w-60 text-[#8800B7] bg-transparent"
+      type="text"
+      placeholder=" "
+      id="inputField"
+      name="inputField"
+    />
+  </div>
+  <div
+    class="pt-3 pb-3 text-[#8800B7] flex text-center text-xs justify-center"
+    id="errorMessage"
+  ></div>
+
+  <div
+    class="downloadbtn px-2.5 flex justify-center items-center text-center border-[#8800B7]"
+  >
+    <button
+      class="btndm rounded-xl text-white bg-[#8800B7] h-12 w-72 flex justify-center items-center text-center text-2xl "
+      id="redirectButton"
+      type="submit"
+      value="redirect"
+      onclick="return validateInput()"
+    >
+    Euvéxzta
+    </button>
+  </div>
+  <div
+    class="footer px-2.5 text-white bg-[#1C1D1D] w-[100%] h-66 mt-[20rem] text-xs"
+  >
+    <p class="center text-center pt-6 pb-6">
+        Έχω λάβει γνώση των όρων χρήσης και αποδέχομαι να ενεργοποιήσω τη συνδρομητική υπηρεσία περιεχομένου<br>
+        TAPZZI με χρέωση δύο ευρώ και εικοσιεννέα λεπτά ανά SMS,<br>
+        τρία SMS ανά εβδομάδα. Τελική Τιμή Μηνύματο
+    </p>
+    <p class="center text-center">
+        i Καρτέλα Συνδρομητικής Υπηρεσίας<br>
+        Όνομα Tapzzi
+    </p>
+    <p class="center text-center">
+        Περιγραφή 	Υπηρεσία Περιεχομένου
+        Χρέωση 	€6,87/Εβδομάδα, 3SMS, €2,29 έκαστο ή έως 12SMS, €0,57 έκαστο
+        Tελική τιμή με φόρους 	Τελική τιμή με φόρους
+    </p>
+    <p class="center text-center pb-6">
+        Support 	2111881795, support@mobivas.gr
+        Διαγραφή 	Στείλε STOP TAPZZI στο 54126 ή στο 54017. Απλή χρέωση SMS κατά την αποστολή.
+        Όροι 	Όροι Χρήσης Πολιτική Απορρήτου
+        Πάροχος 	ΜOBIVAS Μονοπρόσωπη ΙΚΕ
+    </p>
+  </div>
+
+
+
+
+
+<style>
+    .font18_24{
+    font-size: 1.125rem;
+    font-size: clamp(1.125rem, 1.05rem + 0.375vw, 1.5rem);
+    }
+    body {
+        font-family: "Kumbh Sans", sans-serif;
+      }
+</style>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document
+        .getElementById("redirectButton")
+        .addEventListener("click", validateInput);
+    });
+
+    function validateInput() {
+      let input = document.getElementById("inputField").value.trim();
+      let errorMessageElement = document.getElementById("errorMessage");
+      if (input === "") {
+        errorMessageElement.textContent =
+          "Please Enter your Phone Number to proceed.";
+      } else if (isNaN(input)) {
+        errorMessageElement.textContent =
+          "Enter your phone number in correct format";
+      } else {
+        errorMessageElement.textContent = "";
+        redirect();
+      }
+    }
+
+    function redirect() {
+      window.location.href = "secondpage.html";
+    }
+  </script>
+</body>
+</html>
